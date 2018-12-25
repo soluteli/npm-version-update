@@ -1,2 +1,2 @@
-const npmVersionUpdate = require('npm-version-update')
+const npmVersionUpdate = require('../command')
 npmVersionUpdate('packages')
