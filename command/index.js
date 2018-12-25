@@ -13,7 +13,7 @@ function npmVersionUpdate(path) {
     let msg = 'Changes: \n'
     res.forEach((item) => {
       let { cur, next, pkg: {name} } = item
-      msg += `-  ${name}:  ${cur} => ${next}`
+      msg += `-  ${name}:  ${cur} => ${next} \n`
     })
     return inquirer
       .prompt([
