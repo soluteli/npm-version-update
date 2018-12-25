@@ -1,8 +1,12 @@
 {
   "name": "npm-version-update",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "update package version => git tag => git push",
   "main": "command/index.js",
+  "files": [
+    "command",
+    "git"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
