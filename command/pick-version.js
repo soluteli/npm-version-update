@@ -21,7 +21,7 @@ function getVersionChoices(version) {
 }
 
 
-function askVersion({version, name}) {
+function pickVersion({version, name}) {
   let choices = getVersionChoices(version)
   return inquirer
     .prompt([
@@ -70,4 +70,4 @@ function askVersion({version, name}) {
     });
 }
 
-exports.askVersion = askVersion
+module.exports = pickVersion
