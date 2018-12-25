@@ -8,7 +8,7 @@ const git = require('./git')
  * @param {*} path 默认为 '.' 相对根目录的地址
  */
 function npmVersionUpdate(path) {
-  getVersions()
+  getVersions(path)
   .then(res => {
     let msg = 'Changes: \n'
     res.forEach((item) => {
@@ -21,12 +21,13 @@ function npmVersionUpdate(path) {
           type: "confirm",
           name: "version",
           message: msg,
-          default: true,
         }
       ])
       .then(answer => {
-        if(answer) {
+        if(answer.version) {
           return updateVersion(res)
+        } else {
+          process.exit(1)
         }
       })
       .then(() => {
@@ -40,3 +41,5 @@ function npmVersionUpdate(path) {
       })
   }) 
 }
+
+npmVersionUpdate()

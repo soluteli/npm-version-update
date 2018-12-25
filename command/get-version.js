@@ -7,9 +7,10 @@ const globAsync = util.promisify(glob);
 const basePath = process.cwd()
 let resolve = (dir = '.') => path.posix.join(basePath, dir)
 
-async function getPickList(dir) {
+async function getPickList(dir = '.') {
   let pathToSearch = resolve(dir)
-  let filesArr = await globAsync(`${dir}/**/package.json`, resolve(dir))
+  let pattern = dir === '.' ? 'package\.json' : `${dir}/**/package.json`
+  let filesArr = await globAsync(pattern, pathToSearch)
 
   let toPickList = filesArr.map(iii => {
     let filePath = resolve(iii)
