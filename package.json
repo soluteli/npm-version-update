@@ -1,6 +1,6 @@
 {
   "name": "npm-version-update",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "update package version => git tag => git push",
   "main": "command/index.js",
   "scripts": {
