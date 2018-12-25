@@ -9,7 +9,7 @@ let resolve = (dir = '.') => path.posix.join(basePath, dir)
 
 async function getPickList(dir = '.') {
   let pathToSearch = resolve(dir)
-  let pattern = dir === '.' ? 'package\.json' : `${dir}/**/package.json`
+  let pattern = dir === '.' ? 'package.json' : `${dir}/**!(node_modules)/package.json`
   let filesArr = await globAsync(pattern, pathToSearch)
 
   let toPickList = filesArr.map(iii => {
