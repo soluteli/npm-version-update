@@ -2,5 +2,7 @@ const isAnythingCommitted = require('../git/is-anything-committed')
 let opts = {
   cwd: process.cwd()
 }
-let a = isAnythingCommitted(opts)
-console.log(a)
+
+// 
+let is_AnythingCommitted = isAnythingCommitted(opts)
+console.log(is_AnythingCommitted)
