@@ -42,4 +42,4 @@ function npmVersionUpdate(path) {
   }) 
 }
 
-npmVersionUpdate()
+module.exports = npmVersionUpdate
